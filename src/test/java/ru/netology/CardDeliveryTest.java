@@ -21,7 +21,7 @@ class CardDeliveryTest {
         Configuration.timeout = 15;
 
         $("[data-test-id=city] input").val("Москва");
-        $x("//input[@type='tel']").pressTab();
+        $x("//input[@type='tel']").val("02.08.2022");
         $x("//input[@name='name']").val("Иван Петров-Водкин");
         $x("//input[@name='phone']").val("+79001231212");
         $("[data-test-id=agreement]").click();
