@@ -32,10 +32,10 @@ class CardDeliveryTest {
         $x("//input[@type='tel']").val(planDate);
         $x("//input[@name='name']").val("Иван Ласточкин");
         $x("//input[@name='phone']").val("+79991112233");
-        $("[data-test-id=agreement]").click();
+        $(".button").click();
         $(".button.button_view_extra.button_size_m").click();
-        $("#root > div > div.notification.notification_status_ok.notification_has-closer.notification_stick-to_right.notification_theme_alfa-on-white > div.notification__content")
-                .shouldHave(Condition.text("Встреча успешно запланирована на " + planDate), Duration.ofSeconds(15))
+        $(".notification__content")
+                .shouldHave(Condition.text("Встреча успешно забронирована на " + planDate), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
 
     }
