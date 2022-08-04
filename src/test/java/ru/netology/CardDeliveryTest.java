@@ -32,7 +32,7 @@ class CardDeliveryTest {
         $x("//input[@type='tel']").val(planDate);
         $x("//input[@name='name']").val("Иван Ласточкин");
         $x("//input[@name='phone']").val("+79991112233");
-        $(".button").click();
+        $("[data-test-id=agreement]").click();
         $(".button.button_view_extra.button_size_m").click();
         $(".notification__content")
                 .shouldHave(Condition.text("Встреча успешно забронирована на " + planDate), Duration.ofSeconds(15))
