@@ -34,7 +34,6 @@ class CardDeliveryTest {
         $x("//input[@name='phone']").val("+79991112233");
         $("[data-test-id=agreement]").click();
         $(".button.button_view_extra.button_size_m").click();
-        $(".button.button_view_extra.button_size_s").click();
         $("[data-test-id='success-notification']")
                 .shouldHave(Condition.text("Успешно!"))
                 .shouldHave(Condition.text("Встреча успешно запланирована на " + planDate), Duration.ofSeconds(15))
@@ -54,7 +53,6 @@ class CardDeliveryTest {
         $x("//input[@name='phone']").val("+79992223344");
         $("[data-test-id=agreement]").click();
         $(".button.button_view_extra.button_size_m").click();
-        $(".button.button_view_extra.button_size_s").click();
         $("[data-test-id='success-notification']")
                 .shouldHave(Condition.text("Успешно!"))
                 .shouldHave(Condition.text("Встреча успешно запланирована на " + planDate1), Duration.ofSeconds(15))
