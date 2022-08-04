@@ -34,8 +34,7 @@ class CardDeliveryTest {
         $x("//input[@name='phone']").val("+79991112233");
         $("[data-test-id=agreement]").click();
         $(".button.button_view_extra.button_size_m").click();
-        $("[data-test-id=success-notification]")
-                .shouldHave(Condition.text("Успешно!"))
+        $("#root > div > div.notification.notification_status_ok.notification_has-closer.notification_stick-to_right.notification_theme_alfa-on-white > div.notification__content")
                 .shouldHave(Condition.text("Встреча успешно запланирована на " + planDate), Duration.ofSeconds(15))
                 .shouldBe(Condition.visible);
 
