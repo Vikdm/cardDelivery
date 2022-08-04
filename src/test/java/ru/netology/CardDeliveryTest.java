@@ -40,21 +40,4 @@ class CardDeliveryTest {
 
     }
 
-    @Test
-    void testDelivery1() {
-
-        String planDate1 = generateDate(10);
-
-        $("[data-test-id=city] input").val("Москва");
-        $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
-        $x("//input[@type='tel']").val(planDate1);
-        $x("//input[@name='name']").val("Иван-Олег Ласточкин");
-        $x("//input[@name='phone']").val("+79992223344");
-        $("[data-test-id=agreement]").click();
-        $(".button.button_view_extra.button_size_m").click();
-        $("[data-test-id='success-notification']")
-                .shouldHave(Condition.text("Встреча успешно запланирована на " + planDate1), Duration.ofSeconds(15))
-                .shouldBe(Condition.visible);
-
-    }
 }
